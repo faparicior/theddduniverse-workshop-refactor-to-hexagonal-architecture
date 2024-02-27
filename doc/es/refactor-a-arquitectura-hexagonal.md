@@ -1,8 +1,10 @@
+[![en](https://img.shields.io/badge/lang-en-yellow.svg)](../en/refactor-to-hexagonal-architecture.md)
+
 # Aprende DDD paso a paso, usando las cartas de "The DDD universe"
 
 ## Refactor a "Arquitectura hexagonal"
 
-Como argumentamos en [nuestra presentación](../../../README.es.md), nuestro objetivo es adaptar el código ya existente para hacerlo más flexible a cambios.
+Como argumentamos en [nuestra presentación](../../README.es.md), nuestro objetivo es adaptar el código ya existente para hacerlo más flexible a cambios.
 
 Lo primero que necesitamos es abonar el terreno para que DDD pueda prosperar. Para ello, es necesario refactorizar nuestro código para ubicar todas las piezas en el lugar que se espera en una Arquitectura hexagonal.
 

@@ -1,3 +1,5 @@
+[![en](https://img.shields.io/badge/lang-en-yellow.svg)](README.md)
+
 # Aprende DDD paso a paso, usando las cartas de "The DDD universe"
 
 En esta serie de workshops trabajaremos sobre un código muy básico y llano. 
