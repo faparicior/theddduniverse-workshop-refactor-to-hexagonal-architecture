@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  php:
+    build:
+      context: ./docker/php
+      dockerfile: Dockerfile
+      args:
+        - UID=1001
+        - GID=1001
+    image: app_php
+    container_name: app_php
+    sysctls:
+      - net.ipv4.ip_unprivileged_port_start=0
+    volumes:
+      - ./:/usr/src/app
+      - ./docker/php/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+    #            - ./docker/php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
+    working_dir: /usr/src/app
+    networks:
+      - webnet
+
+networks:
+  webnet:

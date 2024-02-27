@@ -1,0 +1,33 @@
+{
+  "name": "code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -r ts-node/register **/test/**/*.test.ts",
+    "build": "tsc --build",
+    "serve": "ts-node ./src",
+    "start": "node ./dist",
+    "lint": "tsc --noEmit && eslint \"**/*.ts\" --quiet --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.11.16",
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
+    "@typescript-eslint/parser": "^6.20.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "mocha": "^10.2.0",
+    "prettier": "3.2.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@types/sprintf-js": "^1.1.4",
+    "sqlite3": "^5.1.7"
+  }
+}

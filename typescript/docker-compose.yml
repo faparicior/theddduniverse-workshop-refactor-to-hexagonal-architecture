@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  node:
+    build:
+      context: ./docker/node
+      dockerfile: Dockerfile
+      args:
+        - UID=1000
+        - GID=1000
+    image: app_node
+    container_name: app_node
+    user: "node"
+    sysctls:
+      - net.ipv4.ip_unprivileged_port_start=0
+    volumes:
+      - ./:/usr/code
+    working_dir: /usr/code
+    ports:
+      - 3000:3000
+    networks:
+      - webnet
+
+networks:
+  webnet:
