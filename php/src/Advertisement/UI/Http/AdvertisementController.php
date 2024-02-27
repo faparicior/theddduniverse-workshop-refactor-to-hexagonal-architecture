@@ -1,39 +1,15 @@
 <?php
 declare(strict_types=1);
 
-namespace Demo\App\Controllers;
+namespace Demo\App\Advertisement\UI\Http;
 
+use Demo\App\Advertisement\Domain\Model\Advertisement;
 use Demo\App\framework\FrameworkRequest;
 use Demo\App\framework\FrameworkResponse;
 use Demo\App\framework\SqliteConnection;
-use Demo\App\Model\AdvertisementModel;
-use Ramsey\Uuid\Uuid;
 
 final readonly class AdvertisementController
 {
-    public function addAdvertisement(FrameworkRequest $request): FrameworkResponse
-    {
-        $advertisement = new AdvertisementModel(
-            Uuid::uuid4()->toString(),
-            ($request->data())['description'],
-            ($request->data())['password'],
-        );
-
-        $connection = new SqliteConnection();
-        $pdo = $connection->connect();
-
-        $pdo->exec(sprintf("INSERT INTO advertisements (id, description, password) VALUES ('%s', '%s', '%s');",
-                $advertisement->id(),
-                $advertisement->description(),
-                md5($advertisement->password()),
-            )
-        );
-
-        return new FrameworkResponse([
-            'id' => $advertisement->id(),
-        ]);
-    }
-
     public function changeAdvertisement(FrameworkRequest $request): FrameworkResponse
     {
         $connection = new SqliteConnection();
@@ -43,7 +19,7 @@ final readonly class AdvertisementController
             ($request->data())['id']
         ))->fetchAll();
 
-        $advertisement = new AdvertisementModel(
+        $advertisement = new Advertisement(
             $result[0]['id'],
             $result[0]['description'],
             $result[0]['password'],

@@ -2,7 +2,10 @@
 
 namespace Tests\Demo\App\e2e;
 
-use Demo\App\Controllers\AdvertisementController;
+use Demo\App\Advertisement\Application\Command\PublishAdvertisement\PublishAdvertisementUseCase;
+use Demo\App\Advertisement\UI\Http\AdvertisementController;
+use Demo\App\Advertisement\UI\Http\PublishAdvertisementController;
+use Demo\App\framework\DependencyInjector;
 use Demo\App\framework\FrameworkRequest;
 use Demo\App\framework\SqliteConnection;
 use PHPUnit\Framework\TestCase;
@@ -20,17 +23,18 @@ final class AdvertisementTest extends TestCase
         parent::setUp();
     }
 
-    public function testShouldCreateAnAdvertisement(): void
+    public function testShouldPublishAnAdvertisement(): void
     {
-        $controller = new AdvertisementController();
-        $response = $controller->addAdvertisement(new FrameworkRequest(
+        $controller = DependencyInjector::getPublishAdvertisementController();
+
+        $response = $controller->request(new FrameworkRequest(
             [
                 'description' => 'Dream advertisement ',
                 'password' => 'myPassword',
             ]
         ));
 
-        self::assertNotEmpty($response->data());
+        self::assertEmpty($response->data());
 
         $resultSet = $this->connection->query('select * from advertisements;')->fetchAll();
         self::assertEquals('Dream advertisement ', $resultSet[0][1]);
@@ -105,7 +109,7 @@ final class AdvertisementTest extends TestCase
         self::assertCount(2, $response->data());
     }
 
-    public function testShouldDeleteAnAdvertisement(): void
+    public function testShouldDeleteAnAdvertisementWithMVC(): void
     {
         $this->withAnAdvertisementCreated();
 

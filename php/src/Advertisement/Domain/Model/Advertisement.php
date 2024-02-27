@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Demo\App\Model;
+namespace Demo\App\Advertisement\Domain\Model;
 
-final class AdvertisementModel
+final class Advertisement
 {
     public function __construct(
         private readonly string $id,
