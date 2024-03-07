@@ -5,7 +5,7 @@ namespace Demo\App\Advertisement\Infrastructure\Persistence;
 
 use Demo\App\Advertisement\Domain\AdvertisementRepository;
 use Demo\App\Advertisement\Domain\Model\Advertisement;
-use Demo\App\framework\SqliteConnection;
+use Demo\App\framework\database\SqliteConnection;
 
 class SqliteAdvertisementRepository implements AdvertisementRepository
 {
