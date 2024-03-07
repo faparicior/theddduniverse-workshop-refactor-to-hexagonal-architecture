@@ -19,8 +19,8 @@ final class PublishAdvertisementController
     {
         $command = new PublishAdvertisementCommand(
             Uuid::uuid4()->toString(),
-            ($request->data())['description'],
-            ($request->data())['password'],
+            ($request->content())['description'],
+            ($request->content())['password'],
         );
 
         $this->useCase->execute($command);

@@ -5,12 +5,25 @@ namespace Demo\App\framework;
 
 final readonly class FrameworkRequest
 {
-    public function __construct(private array $data)
+    public const string METHOD_GET = 'GET';
+    public const string METHOD_POST = 'POST';
+
+    public function __construct(private string $method, private string $path, private array $content)
     {
     }
 
-    public function data(): array
+    public function method(): string
     {
-        return $this->data;
+        return $this->method;
+    }
+
+    public function path(): string
+    {
+        return $this->path;
+    }
+
+    public function content(): array
+    {
+        return $this->content;
     }
 }

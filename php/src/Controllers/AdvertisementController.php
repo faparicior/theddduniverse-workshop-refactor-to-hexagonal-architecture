@@ -1,22 +1,25 @@
 <?php
 declare(strict_types=1);
 
-namespace Demo\App\Advertisement\UI\Http;
+namespace Demo\App\Controllers;
 
 use Demo\App\Advertisement\Domain\Model\Advertisement;
+use Demo\App\framework\database\DatabaseConnection;
 use Demo\App\framework\FrameworkRequest;
 use Demo\App\framework\FrameworkResponse;
-use Demo\App\framework\SqliteConnection;
 
 final readonly class AdvertisementController
 {
+    public function __construct(private DatabaseConnection $connection)
+    {
+    }
+
     public function changeAdvertisement(FrameworkRequest $request): FrameworkResponse
     {
-        $connection = new SqliteConnection();
-        $pdo = $connection->connect();
+        $pdo = $this->connection->connect();
 
         $result = $pdo->query(sprintf("SELECT * FROM advertisements WHERE id = '%s';",
-            ($request->data())['id']
+            ($request->content())['id']
         ))->fetchAll();
 
         $advertisement = new Advertisement(
@@ -25,12 +28,12 @@ final readonly class AdvertisementController
             $result[0]['password'],
         );
 
-        if ($advertisement->password() !== md5(($request->data())['password'])) {
+        if ($advertisement->password() !== md5(($request->content())['password'])) {
             return new FrameworkResponse([]);
         }
 
-        $advertisement->changeDescription(($request->data())['description']);
-        $advertisement->changePassword(($request->data())['password']);
+        $advertisement->changeDescription(($request->content())['description']);
+        $advertisement->changePassword(($request->content())['password']);
 
         $pdo->exec(sprintf("UPDATE advertisements SET description = '%s', password = '%s' WHERE id = '%s';",
                 $advertisement->description(),
@@ -44,11 +47,10 @@ final readonly class AdvertisementController
 
     public function getAdvertisement(FrameworkRequest $request): FrameworkResponse
     {
-        $connection = new SqliteConnection();
-        $pdo = $connection->connect();
+        $pdo = $this->connection->connect();
 
         $result = $pdo->query(sprintf("SELECT * FROM advertisements WHERE id = '%s';",
-            ($request->data())['id']
+            ($request->content())['id']
         ))->fetchAll();
 
         return new FrameworkResponse([
@@ -60,8 +62,7 @@ final readonly class AdvertisementController
 
     public function listAdvertisements(FrameworkRequest $request): FrameworkResponse
     {
-        $connection = new SqliteConnection();
-        $pdo = $connection->connect();
+        $pdo = $this->connection->connect();
 
         $results = $pdo->query("SELECT * FROM advertisements;")->fetchAll();
 
@@ -79,19 +80,18 @@ final readonly class AdvertisementController
 
     public function deleteAdvertisement(FrameworkRequest $request): FrameworkResponse
     {
-        $connection = new SqliteConnection();
-        $pdo = $connection->connect();
+        $pdo = $this->connection->connect();
 
         $result = $pdo->query(sprintf("SELECT * FROM advertisements WHERE id = '%s';",
-            ($request->data())['id']
+            ($request->content())['id']
         ))->fetchAll();
 
-        if ($result[0]['password'] !== md5(($request->data())['password'])) {
+        if ($result[0]['password'] !== md5(($request->content())['password'])) {
             return new FrameworkResponse([]);
         }
 
         $pdo->exec(sprintf("DELETE FROM advertisements WHERE id = '%s';",
-            ($request->data())['id']
+            ($request->content())['id']
         ));
 
         return new FrameworkResponse([]);

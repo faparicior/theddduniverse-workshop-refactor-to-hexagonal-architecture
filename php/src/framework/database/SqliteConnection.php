@@ -1,10 +1,10 @@
 <?php
 
-namespace Demo\App\framework;
+namespace Demo\App\framework\database;
 
 use PDO;
 
-final class SqliteConnection
+final class SqliteConnection implements DatabaseConnection
 {
     private const PATH_TO_SQLITE_FILE = 'src/db/advertisements.sqlite';
     private const PATH_TO_SQLITE_MIGRATION = 'src/db/migrations/migration.sql';
