@@ -10,7 +10,7 @@ As we argue in [our presentation about the code to refactor](../../README.md), o
 
 The first thing we need to do is prepare the ground for DDD to thrive. To do this, it is necessary to refactor our code to place all the pieces where they are expected in a Hexagonal Architecture.
 
-As a guide, we will use the cards from "The DDD Universe." We will reveal cards, read their descriptions, and move code to its expected place. We will encounter several possible options.
+As a guide, we will use the cards from ["The DDD universe"](https://www.theddduniverse.com/). We will reveal cards, read their descriptions, and move code to its expected place. We will encounter several possible options.
 
 - Move classes to a structure specific to Hexagonal Architecture
 - Create new classes to accommodate code portions.

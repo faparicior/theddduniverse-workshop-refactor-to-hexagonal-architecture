@@ -10,7 +10,7 @@ Como argumentamos en [nuestra presentación del código a refactorizar](../../RE
 
 Lo primero que necesitamos es abonar el terreno para que DDD pueda prosperar. Para ello, es necesario refactorizar nuestro código para ubicar todas las piezas en el lugar que se espera en una Arquitectura hexagonal.
 
-Como guía, usaremos las cartas de "The DDD universe". Iremos descubriendo cartas, leyendo su descripción e iremos moviendo código a su lugar esperado. Nos toparemos con varias posibles opciones.
+Como guía, usaremos las cartas de ["The DDD universe"](https://www.theddduniverse.com/). Iremos descubriendo cartas, leyendo su descripción e iremos moviendo código a su lugar esperado. Nos toparemos con varias posibles opciones.
 
 - Mover clases a una estructura propia de Arquitectura hexagonal
 - Crear clases nuevas para acomodar las porciones de código.
