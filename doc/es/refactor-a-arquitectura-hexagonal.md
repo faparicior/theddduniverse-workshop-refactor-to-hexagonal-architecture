@@ -4,7 +4,9 @@
 
 ## Refactor a "Arquitectura hexagonal"
 
-Como argumentamos en [nuestra presentación](../../README.es.md), nuestro objetivo es adaptar el código ya existente para hacerlo más flexible a cambios.
+#### [Presentación del workshop](https://docs.google.com/presentation/d/17RkrZKJLPwlBhgMuD4ze4J0B2rVFChJ4Po-1e-lSJBU/edit?usp=sharing)
+
+Como argumentamos en [nuestra presentación del código a refactorizar](../../README.es.md), nuestro objetivo es adaptar el código ya existente para hacerlo más flexible a cambios.
 
 Lo primero que necesitamos es abonar el terreno para que DDD pueda prosperar. Para ello, es necesario refactorizar nuestro código para ubicar todas las piezas en el lugar que se espera en una Arquitectura hexagonal.
 
@@ -27,14 +29,6 @@ Acto seguido, les daremos acceso al repositorio y les explicamos los puntos clav
 - Simula un framework
 - Hay tests a nivel de controlador para asegurar que no rompemos nada
 
-```
-TODO: Link a presentación.
-TODO: Repositorio con todos los lenguajes soportados
- - PHP
- - Kotlin
- - Typescript
-```
-
 ### [Actividad en Canva](https://www.canva.com/design/DAF6VDIfdkE/jBve6kYf6zX9ly9tyEToNA/edit?utm_content=DAF6VDIfdkE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 - Para empezar, damos por sentado que las capas son las del dibujo y su distribución. Les pediremos que imiten con sus cartas esa figura. Dejando sin colocar las cartas tapadas.
@@ -52,10 +46,6 @@ TODO: Repositorio con todos los lenguajes soportados
 
 - Nos debemos parar aquí para hablar de las responsabilidades del caso de uso (Buscar info en libros).
 - Link a la web para ver con detalle la explicación del caso de uso
-
-```
-TODO: Link al código y rama.
-```
 
 ![refactor-a-arquitectura-hexagonal-intermedio](refactor-a-arquitectura-hexagonal-2.webp)
 </details>

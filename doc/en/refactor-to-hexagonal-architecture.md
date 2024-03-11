@@ -4,7 +4,9 @@
 
 ## Refactor to "Hexagonal Architecture"
 
-As we argue in [our presentation](../../README.md), our goal is to adapt the existing code to make it more flexible to changes.
+#### [Workshop presentation slides](https://docs.google.com/presentation/d/17RkrZKJLPwlBhgMuD4ze4J0B2rVFChJ4Po-1e-lSJBU/edit?usp=sharing)
+
+As we argue in [our presentation about the code to refactor](../../README.md), our goal is to adapt the existing code to make it more flexible to changes.
 
 The first thing we need to do is prepare the ground for DDD to thrive. To do this, it is necessary to refactor our code to place all the pieces where they are expected in a Hexagonal Architecture.
 
