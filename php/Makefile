@@ -25,7 +25,7 @@ composer-autoload:
 .PHONY: composer-autoload
 
 tests:
-	docker run -u $(user):$(group) -it --rm --name demo-app -v $(current_dir)/:/usr/src/app -w /usr/src/app php:8.3.2-cli-bullseye php /usr/src/app/vendor/phpunit/phpunit/phpunit --testdox /usr/src/app/tests/e2e
+	docker run -u $(user):$(group) -it --rm --name demo-app -v $(current_dir)/:/usr/src/app -w /usr/src/app php:8.3.2-cli-bullseye php /usr/src/app/vendor/phpunit/phpunit/phpunit  /usr/src/app/tests/e2e
 .PHONY: tests
 
 console:
