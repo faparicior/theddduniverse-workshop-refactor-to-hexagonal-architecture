@@ -4,6 +4,7 @@ namespace Tests\Demo\App\e2e;
 
 use Demo\App\framework\DependencyInjectionResolver;
 use Demo\App\framework\FrameworkRequest;
+use Demo\App\framework\FrameworkResponse;
 use Demo\App\framework\Server;
 use PHPUnit\Framework\TestCase;
 
@@ -31,14 +32,14 @@ final class AdvertisementTest extends TestCase
             FrameworkRequest::METHOD_POST,
             'advertisement',
             [
+                'id' => self::FLAT_ID,
                 'description' => 'Dream advertisement ',
                 'password' => 'myPassword',
             ]
         );
 
         $response = $this->server->route($request);
-
-        self::assertEmpty($response->data());
+        self::assertEquals(FrameworkResponse::STATUS_CREATED, $response->statusCode());
 
         $resultSet = $this->connection->query('select * from advertisements;')->fetchAll();
         self::assertEquals('Dream advertisement ', $resultSet[0][1]);

@@ -7,7 +7,6 @@ use Demo\App\Advertisement\Application\Command\PublishAdvertisement\PublishAdver
 use Demo\App\Advertisement\Application\Command\PublishAdvertisement\PublishAdvertisementUseCase;
 use Demo\App\framework\FrameworkRequest;
 use Demo\App\framework\FrameworkResponse;
-use Ramsey\Uuid\Uuid;
 
 final class PublishAdvertisementController
 {
@@ -18,13 +17,16 @@ final class PublishAdvertisementController
     public function request(FrameworkRequest $request): FrameworkResponse
     {
         $command = new PublishAdvertisementCommand(
-            Uuid::uuid4()->toString(),
+            ($request->content())['id'],
             ($request->content())['description'],
             ($request->content())['password'],
         );
 
         $this->useCase->execute($command);
 
-        return new FrameworkResponse([]);
+        return new FrameworkResponse(
+            FrameworkResponse::STATUS_CREATED,
+            []
+        );
     }
 }
