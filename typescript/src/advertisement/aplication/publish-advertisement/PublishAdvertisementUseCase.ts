@@ -1,11 +1,13 @@
+import { AdvertisementRepository } from "../../domain/AdvertisementRepository";
 import { Advertisement } from "../../domain/model/Advertisement";
 import { PublishAdvertisementCommand } from "./PublishAdvertisementCommand";
 
 export class PublishAdvertisementUseCase {
-  //private repository: Repository;
 
-  constructor(/**repository: repository*/) {
-    //this.repository = repository;
+  constructor(
+    private advertisementRepository: AdvertisementRepository
+  ) {
+
   }
 
   async execute(command: PublishAdvertisementCommand): Promise<void> {
@@ -15,7 +17,8 @@ export class PublishAdvertisementUseCase {
       command.password
     )
 
-    console.log(advertisement.toPrimitives())
+    await this.advertisementRepository.save(advertisement)
+
   }
 
 }

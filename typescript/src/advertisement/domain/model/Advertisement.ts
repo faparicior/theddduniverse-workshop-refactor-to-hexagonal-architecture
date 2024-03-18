@@ -7,7 +7,7 @@ export class Advertisement {
   ) {
   }
 
-  public id(): string { // TODO: check with fernando: use getter or to primitives
+  public id(): string { // TODO: check with fernando: use getter or toPrimitives()
     return this._id
   }
 

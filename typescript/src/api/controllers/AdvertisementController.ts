@@ -2,7 +2,8 @@ import { v4 as uuid } from 'uuid';
 import { FrameworkResponse } from "../../framework/FrameworkResponse";
 import SqliteConnection from "../../framework/SqliteConnection";
 import { FrameworkRequest } from '../../framework/FrameworkRequest';
-import { request } from 'http';
+
+const connection = new SqliteConnection().connect();
 
 export default class AdvertisementController {
 
@@ -21,23 +22,4 @@ export default class AdvertisementController {
 
 	}
 
-	// public static async getAdvertisement(req: Request, res: Response) {
-	// 	const advertisement = await Advertisement.findById(req.params.id);
-	// 	res.json(advertisement);
-	// }
-	//
-	// public static async createAdvertisement(req: Request, res: Response) {
-	// 	const newAdvertisement = new Advertisement(req.body);
-	// 	await newAdvertisement.save();
-	// 	res.json(newAdvertisement);
-	// }
-	//
-	// public static async updateAdvertisement(req: Request, res: Response) {
-	// 	const updatedAdvertisement = await Advertisement.findByIdAndUpdate(req.params.id, req.body, { new: true });
-	// 	res.json(updatedAdvertisement);
-	// }
-	//
-	// public static async deleteAdvertisement(req: Request, res: Response) {
-	// 	await Advertisement.findByIdAndDelete(req.params.id);
-	// 	res.json({ message: 'Advertisement deleted'
 }
