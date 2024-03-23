@@ -34,9 +34,7 @@ final readonly class AdvertisementController
 
         return new FrameworkResponse(
             FrameworkResponse::STATUS_CREATED,
-            [
-                'id' => $advertisement->id(),
-            ]
+            []
         );
     }
 
