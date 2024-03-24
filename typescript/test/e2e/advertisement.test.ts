@@ -1,8 +1,8 @@
-import { Database } from "sqlite3";
+import { v4 as uuid } from "uuid"
 import AdvertisementController from "../../src/api/controllers/AdvertisementController";
-import { FrameworkRequest } from "../../src/framework/FrameworkRequest";
+import { FrameworkRequest, Method } from "../../src/framework/FrameworkRequest";
 import SqliteConnection from "../../src/framework/SqliteConnection";
-import { promisify } from 'util';
+
 describe("Advertisement", () => {
 
     beforeAll(async () => {
@@ -15,7 +15,9 @@ describe("Advertisement", () => {
 
         const advertisementController = new AdvertisementController()
 
-        const request = new FrameworkRequest('Dream advertisement', 'myPassword')
+        const request = new FrameworkRequest(Method.GET, '/',
+            { id: uuid(), description: 'Dream advertisement', password: 'myPassword' }
+        )
 
         const actual = await advertisementController.addAdvertisement(request)
 
@@ -23,7 +25,8 @@ describe("Advertisement", () => {
 
         const dbData = await connection.all("SELECT * FROM advertisements")
 
-        expect(actual.id).toBeDefined();
+        expect(actual.statusCode).toBe(201);
+
         expect(dbData.length).toBe(1);
 
     });

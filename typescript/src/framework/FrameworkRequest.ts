@@ -1,9 +1,14 @@
 
+export enum Method {
+  GET = "GET",
+  POST = "POST",
+}
 export class FrameworkRequest {
 
   constructor(
-    readonly description: string,
-    readonly password: string,
+    readonly method: Method,
+    readonly path: string,
+    readonly body: any
   ) { }
 
 }
