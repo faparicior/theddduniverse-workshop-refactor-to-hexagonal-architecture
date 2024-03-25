@@ -1,25 +1,25 @@
 import { v4 as uuid } from "uuid"
-import AdvertisementController from "../../src/api/controllers/AdvertisementController";
 import { FrameworkRequest, Method } from "../../src/framework/FrameworkRequest";
 import SqliteConnection from "../../src/framework/SqliteConnection";
+import { FrameworkServer } from "../../src/framework/FrameworkServer";
 
+let server: FrameworkServer
 describe("Advertisement", () => {
 
+
     beforeAll(async () => {
+        server = new FrameworkServer();
         const connection = await new SqliteConnection().connect();
         await connection.run('delete from advertisements;')
         connection.close();
     })
     it("Should create a advertisement", async () => {
 
-
-        const advertisementController = new AdvertisementController()
-
-        const request = new FrameworkRequest(Method.GET, '/',
+        const request = new FrameworkRequest(Method.POST, '/advertisement',
             { id: uuid(), description: 'Dream advertisement', password: 'myPassword' }
         )
 
-        const actual = await advertisementController.addAdvertisement(request)
+        const actual = await server.route(request)
 
         const connection = await new SqliteConnection().connect();
 
