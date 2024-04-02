@@ -7,10 +7,10 @@ export default class SqliteConnection {
     path_to_sqlite_migration = 'src/db/migrations/migration.sql'
 
     async connect(): Promise<Database> {
-        let migrate = false
+        let createDatabase = false
 
         if (!fs.existsSync(this.path_to_sqlite_file)) {
-            migrate = true
+            createDatabase = true
         }
 
         const db = await open({
@@ -18,12 +18,12 @@ export default class SqliteConnection {
             driver: sqlite3.Database
         })
 
-        if (migrate) this.migrate(db)
+        if (createDatabase) this.createDatabase(db)
 
         return db
     }
 
-    private migrate(db: Database): void {
+    private createDatabase(db: Database): void {
         console.log('Migrating database')
         db.exec(fs.readFileSync(this.path_to_sqlite_migration).toString());
     }
