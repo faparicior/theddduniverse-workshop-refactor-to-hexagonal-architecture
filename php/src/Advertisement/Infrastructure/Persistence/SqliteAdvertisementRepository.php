@@ -9,15 +9,15 @@ use Demo\App\framework\database\SqliteConnection;
 
 class SqliteAdvertisementRepository implements AdvertisementRepository
 {
-    private \PDO $pdo;
+    private \PDO $dbConnection;
     public function __construct(SqliteConnection $connection)
     {
-        $this->pdo = $connection->connect();
+        $this->dbConnection = $connection->connect();
     }
 
     public function save(Advertisement $advertisement): void
     {
-        $this->pdo->exec(sprintf('
+        $this->dbConnection->exec(sprintf('
                 INSERT INTO advertisements (id, description, password) VALUES (\'%1$s\', \'%2$s\', \'%3$s\') 
                 ON CONFLICT(id) DO UPDATE SET description = \'%2$s\', password = \'%3$s\';',
                 $advertisement->id(),
