@@ -7,7 +7,6 @@ use Demo\App\framework\database\SqliteConnection;
 use Demo\App\framework\FrameworkRequest;
 use Demo\App\framework\FrameworkResponse;
 use Demo\App\Model\AdvertisementModel;
-use Ramsey\Uuid\Uuid;
 
 final readonly class AdvertisementController
 {
@@ -23,9 +22,9 @@ final readonly class AdvertisementController
             ($request->content())['password'],
         );
 
-        $pdo = $this->connection->connect();
+        $dbConnection = $this->connection->connect();
 
-        $pdo->exec(sprintf("INSERT INTO advertisements (id, description, password) VALUES ('%s', '%s', '%s');",
+        $dbConnection->exec(sprintf("INSERT INTO advertisements (id, description, password) VALUES ('%s', '%s', '%s');",
                 $advertisement->id(),
                 $advertisement->description(),
                 md5($advertisement->password()),
