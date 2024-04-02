@@ -1,8 +1,9 @@
 import sqlite3 from 'sqlite3'
 import { open, Database } from 'sqlite'
 import * as fs from "fs";
+import {DatabaseConnection} from "./DatabaseConnection";
 
-export default class SqliteConnection {
+export default class SqliteConnection implements DatabaseConnection{
     path_to_sqlite_file = 'src/db/advertisements.sqlite'
     path_to_sqlite_migration = 'src/db/migrations/migration.sql'
 
