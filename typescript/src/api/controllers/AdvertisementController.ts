@@ -1,5 +1,5 @@
 import { FrameworkResponse } from "../../framework/FrameworkResponse";
-import SqliteConnection from "../../framework/SqliteConnection";
+import SqliteConnection from "../../framework/database/SqliteConnection";
 import { FrameworkRequest } from '../../framework/FrameworkRequest';
 import {createHash} from "node:crypto";
 

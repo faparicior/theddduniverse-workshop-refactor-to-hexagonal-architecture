@@ -1,6 +1,6 @@
 import { v4 as uuid } from "uuid"
 import { FrameworkRequest, Method } from "../../src/framework/FrameworkRequest";
-import SqliteConnection from "../../src/framework/SqliteConnection";
+import SqliteConnection from "../../src/framework/database/SqliteConnection";
 import { FrameworkServer } from "../../src/framework/FrameworkServer";
 
 let server: FrameworkServer
