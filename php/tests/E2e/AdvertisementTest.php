@@ -1,11 +1,11 @@
 <?php
 
-namespace Tests\Demo\App\e2e;
+namespace Tests\Demo\App\E2e;
 
-use Demo\App\framework\DependencyInjectionResolver;
-use Demo\App\framework\FrameworkRequest;
-use Demo\App\framework\FrameworkResponse;
-use Demo\App\framework\Server;
+use Demo\App\Framework\DependencyInjectionResolver;
+use Demo\App\Framework\FrameworkRequest;
+use Demo\App\Framework\FrameworkResponse;
+use Demo\App\Framework\Server;
 use PHPUnit\Framework\TestCase;
 
 final class AdvertisementTest extends TestCase

@@ -3,9 +3,9 @@ declare(strict_types=1);
 
 namespace Demo\App\Controllers;
 
-use Demo\App\framework\database\SqliteConnection;
-use Demo\App\framework\FrameworkRequest;
-use Demo\App\framework\FrameworkResponse;
+use Demo\App\Framework\Database\SqliteConnection;
+use Demo\App\Framework\FrameworkRequest;
+use Demo\App\Framework\FrameworkResponse;
 use Demo\App\Model\AdvertisementModel;
 
 final readonly class AdvertisementController

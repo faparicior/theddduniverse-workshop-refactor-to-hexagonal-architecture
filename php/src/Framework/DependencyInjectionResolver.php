@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Demo\App\framework;
+namespace Demo\App\Framework;
 
 use Demo\App\Controllers\AdvertisementController;
-use Demo\App\framework\database\DatabaseConnection;
-use Demo\App\framework\database\SqliteConnection;
+use Demo\App\Framework\Database\DatabaseConnection;
+use Demo\App\Framework\Database\SqliteConnection;
 
 class DependencyInjectionResolver
 {

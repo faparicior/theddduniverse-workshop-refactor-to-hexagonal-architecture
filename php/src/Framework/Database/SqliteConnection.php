@@ -1,18 +1,19 @@
 <?php
+declare(strict_types=1);
 
-namespace Demo\App\framework\database;
+namespace Demo\App\Framework\Database;
 
 use PDO;
 
 final class SqliteConnection implements DatabaseConnection
 {
-    private const PATH_TO_SQLITE_FILE = 'src/db/advertisements.sqlite';
-    private const PATH_TO_SQLITE_MIGRATION = 'src/db/migrations/migration.sql';
+    private const string PATH_TO_SQLITE_FILE = 'src/db/advertisements.sqlite';
+    private const string PATH_TO_SQLITE_MIGRATION = 'src/db/migrations/migration.sql';
 
     private ?PDO $dbConnection = null;
 
     /**
-     * return in instance of the PDO object that connects to the SQLite database
+     * return in instance of the PDO object that connects to the SQLite Database
      * @return PDO
      */
     public function connect(): PDO
