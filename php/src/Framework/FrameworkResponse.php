@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Demo\App\framework;
+namespace Demo\App\Framework;
 
 final readonly class FrameworkResponse
 {

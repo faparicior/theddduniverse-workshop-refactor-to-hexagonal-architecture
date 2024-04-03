@@ -1,15 +1,14 @@
 <?php
 declare(strict_types=1);
 
-namespace Demo\App\framework;
+namespace Demo\App\Framework;
 
 use Demo\App\Advertisement\Application\Command\PublishAdvertisement\PublishAdvertisementUseCase;
 use Demo\App\Advertisement\Domain\AdvertisementRepository;
 use Demo\App\Advertisement\Infrastructure\Persistence\SqliteAdvertisementRepository;
 use Demo\App\Advertisement\UI\Http\PublishAdvertisementController;
-use Demo\App\Controllers\AdvertisementController;
-use Demo\App\framework\database\DatabaseConnection;
-use Demo\App\framework\database\SqliteConnection;
+use Demo\App\Framework\Database\DatabaseConnection;
+use Demo\App\Framework\Database\SqliteConnection;
 
 class DependencyInjectionResolver
 {
@@ -26,11 +25,6 @@ class DependencyInjectionResolver
     public function advertisementRepository(): AdvertisementRepository
     {
         return new SqliteAdvertisementRepository(self::connection());
-    }
-
-    public function advertisementController(): AdvertisementController
-    {
-        return new AdvertisementController(self::connection());
     }
 
     public function connection(): DatabaseConnection

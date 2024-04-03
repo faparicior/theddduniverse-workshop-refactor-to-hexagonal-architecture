@@ -1,11 +1,12 @@
 <?php
 
-namespace Tests\Demo\App\e2e;
+namespace Tests\Demo\App\E2e;
 
-use Demo\App\framework\DependencyInjectionResolver;
-use Demo\App\framework\FrameworkRequest;
-use Demo\App\framework\FrameworkResponse;
-use Demo\App\framework\Server;
+use Demo\App\Framework\Database\DatabaseConnection;
+use Demo\App\Framework\DependencyInjectionResolver;
+use Demo\App\Framework\FrameworkRequest;
+use Demo\App\Framework\FrameworkResponse;
+use Demo\App\Framework\Server;
 use PHPUnit\Framework\TestCase;
 
 final class AdvertisementTest extends TestCase
@@ -14,13 +15,12 @@ final class AdvertisementTest extends TestCase
     private const string FLAT_ID_2 = '5fa00b21-2930-483e-b610-d6b0e5b19b29';
     private DependencyInjectionResolver $resolver;
     private Server $server;
-    private \PDO $connection;
-
+    private DatabaseConnection $connection;
 
     protected function setUp(): void
     {
         $this->resolver = new DependencyInjectionResolver();
-        $this->connection = $this->resolver->connection()->connect();
+        $this->connection = $this->resolver->connection();
         $this->emptyDatabase();
         $this->server = new Server($this->resolver);
         parent::setUp();
@@ -41,12 +41,12 @@ final class AdvertisementTest extends TestCase
         $response = $this->server->route($request);
         self::assertEquals(FrameworkResponse::STATUS_CREATED, $response->statusCode());
 
-        $resultSet = $this->connection->query('select * from advertisements;')->fetchAll();
+        $resultSet = $this->connection->query('select * from advertisements;');
         self::assertEquals('Dream advertisement ', $resultSet[0][1]);
     }
 
     private function emptyDatabase(): void
     {
-        $this->connection->exec('delete from advertisements;');
+        $this->connection->execute('delete from advertisements;');
     }
 }

@@ -5,8 +5,8 @@ namespace Demo\App\Advertisement\UI\Http;
 
 use Demo\App\Advertisement\Application\Command\PublishAdvertisement\PublishAdvertisementCommand;
 use Demo\App\Advertisement\Application\Command\PublishAdvertisement\PublishAdvertisementUseCase;
-use Demo\App\framework\FrameworkRequest;
-use Demo\App\framework\FrameworkResponse;
+use Demo\App\Framework\FrameworkRequest;
+use Demo\App\Framework\FrameworkResponse;
 
 final class PublishAdvertisementController
 {

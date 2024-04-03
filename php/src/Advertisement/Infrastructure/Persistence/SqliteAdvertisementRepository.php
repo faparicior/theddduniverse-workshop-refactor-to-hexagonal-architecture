@@ -5,19 +5,18 @@ namespace Demo\App\Advertisement\Infrastructure\Persistence;
 
 use Demo\App\Advertisement\Domain\AdvertisementRepository;
 use Demo\App\Advertisement\Domain\Model\Advertisement;
-use Demo\App\framework\database\SqliteConnection;
+use Demo\App\Framework\Database\DatabaseConnection;
+use Demo\App\Framework\database\SqliteConnection;
 
 class SqliteAdvertisementRepository implements AdvertisementRepository
 {
-    private \PDO $dbConnection;
-    public function __construct(SqliteConnection $connection)
+    public function __construct(private DatabaseConnection $connection)
     {
-        $this->dbConnection = $connection->connect();
     }
 
     public function save(Advertisement $advertisement): void
     {
-        $this->dbConnection->exec(sprintf('
+        $this->connection->execute(sprintf('
                 INSERT INTO advertisements (id, description, password) VALUES (\'%1$s\', \'%2$s\', \'%3$s\') 
                 ON CONFLICT(id) DO UPDATE SET description = \'%2$s\', password = \'%3$s\';',
                 $advertisement->id(),
