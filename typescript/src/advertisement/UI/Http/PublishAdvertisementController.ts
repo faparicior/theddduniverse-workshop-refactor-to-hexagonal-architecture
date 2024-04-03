@@ -1,4 +1,3 @@
-import { v4 as uuid } from 'uuid';
 import { FrameworkRequest } from '../../../framework/FrameworkRequest';
 import { FrameworkResponse } from '../../../framework/FrameworkResponse';
 import { PublishAdvertisementCommand } from '../../aplication/publish-advertisement/PublishAdvertisementCommand';

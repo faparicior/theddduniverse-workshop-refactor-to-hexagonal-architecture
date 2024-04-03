@@ -7,7 +7,7 @@ export class Advertisement {
   ) {
   }
 
-  public id(): string { // TODO: check with fernando: use getter or toPrimitives()
+  public id(): string {
     return this._id
   }
 
@@ -18,13 +18,4 @@ export class Advertisement {
   public password(): string {
     return this._password
   }
-
-  toPrimitives() {
-    return {
-      id: this._id,
-      description: this._description,
-      password: this._password
-    };
-  }
 }
-

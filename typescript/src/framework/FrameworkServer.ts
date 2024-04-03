@@ -2,7 +2,6 @@ import { Database } from "sqlite";
 import { PublishAdvertisementController } from "../advertisement/UI/Http/PublishAdvertisementController";
 import { PublishAdvertisementUseCase } from "../advertisement/aplication/publish-advertisement/PublishAdvertisementUseCase";
 import { SqliteAdvertisementRepository } from "../advertisement/infraestructure/SqliteAdvertisementRepository";
-import AdvertisementController from "../api/controllers/AdvertisementController";
 import { FrameworkRequest } from "./FrameworkRequest";
 import { FrameworkResponse } from "./FrameworkResponse";
 
