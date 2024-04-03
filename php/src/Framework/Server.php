@@ -41,6 +41,6 @@ final class Server
     }
     public function notFound(FrameworkRequest $request): FrameworkResponse
     {
-        return new FrameworkResponse(['404'],);
+        return new FrameworkResponse(FrameworkResponse::STATUS_NOT_FOUND, []);
     }
 }
