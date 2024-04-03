@@ -22,9 +22,8 @@ final readonly class AdvertisementController
             ($request->content())['password'],
         );
 
-        $dbConnection = $this->connection->connect();
-
-        $dbConnection->exec(sprintf("INSERT INTO advertisements (id, description, password) VALUES ('%s', '%s', '%s');",
+        $this->connection->execute(
+            sprintf("INSERT INTO advertisements (id, description, password) VALUES ('%s', '%s', '%s');",
                 $advertisement->id(),
                 $advertisement->description(),
                 md5($advertisement->password()),

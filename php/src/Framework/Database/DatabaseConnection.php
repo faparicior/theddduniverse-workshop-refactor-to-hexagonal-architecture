@@ -7,5 +7,7 @@ use PDO;
 
 interface DatabaseConnection
 {
-    public function connect(): PDO;
+    public function execute(string $sql): void;
+
+    public function query(string $sql): array;
 }
