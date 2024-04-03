@@ -11,17 +11,11 @@ final class Server
 
     public function route(FrameworkRequest $request): FrameworkResponse
     {
-        switch ($request->method()) {
-            case FrameworkRequest::METHOD_GET:
-                return $this->get($request);
-                break;
-            case FrameworkRequest::METHOD_POST:
-                return $this->post($request);
-                break;
-            default:
-                return $this->notFound($request);
-                break;
-        }
+        return match ($request->method()) {
+            FrameworkRequest::METHOD_GET => $this->get($request),
+            FrameworkRequest::METHOD_POST => $this->post($request),
+            default => $this->notFound($request),
+        };
     }
 
     public function get(FrameworkRequest $request): FrameworkResponse
@@ -31,16 +25,13 @@ final class Server
 
     public function post(FrameworkRequest $request): FrameworkResponse
     {
-        switch ($request->path()) {
-            case 'advertisement':
-                return $this->resolver->advertisementController()->addAdvertisement($request);
-                break;
-            default:
-                return $this->notFound($request);
-        }
+        return match ($request->path()) {
+            'advertisement' => $this->resolver->advertisementController()->addAdvertisement($request),
+            default => $this->notFound($request),
+        };
     }
     public function notFound(FrameworkRequest $request): FrameworkResponse
     {
-        return new FrameworkResponse(['404'],);
+        return new FrameworkResponse(404, []);
     }
 }

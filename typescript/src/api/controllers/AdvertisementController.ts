@@ -1,8 +1,7 @@
-import { v4 as uuid } from 'uuid';
 import { FrameworkResponse } from "../../framework/FrameworkResponse";
-import SqliteConnection from "../../framework/SqliteConnection";
+import SqliteConnection from "../../framework/database/SqliteConnection";
 import { FrameworkRequest } from '../../framework/FrameworkRequest';
-import { request } from 'http';
+import {createHash} from "node:crypto";
 
 type AddAdvertisementRequest = FrameworkRequest & {
 	body: {
@@ -20,7 +19,7 @@ export default class AdvertisementController {
 		const { id, description, password } = req.body;
 
 		const result = await connection.run('INSERT INTO advertisements (id, description, password) VALUES (?, ?, ?)',
-			id, description, password);
+			id, description, createHash('md5').update(password).digest('hex'));
 
 
 		return new FrameworkResponse(201)
