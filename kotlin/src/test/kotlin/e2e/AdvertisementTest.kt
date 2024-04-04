@@ -29,7 +29,7 @@ class AdvertisementTest {
         val server = Server(DependencyInjectionResolver())
 
         server.route(FrameworkRequest(
-                FrameworkRequest::METHOD_POST,
+                FrameworkRequest.METHOD_POST,
                 "advertisement",
                 mapOf(
                     "id" to ID,

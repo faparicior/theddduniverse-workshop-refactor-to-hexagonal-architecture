@@ -3,10 +3,10 @@ package framework
 class Server(private val resolver: DependencyInjectionResolver){
     fun route(request: FrameworkRequest): FrameworkResponse {
         return when (request.method) {
-            FrameworkRequest::METHOD_GET -> {
+            FrameworkRequest.METHOD_GET -> {
                 this.get()
             }
-            FrameworkRequest::METHOD_POST -> {
+            FrameworkRequest.METHOD_POST -> {
                 this.post(request)
             }
             else -> {
