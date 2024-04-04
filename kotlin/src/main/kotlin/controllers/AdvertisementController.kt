@@ -16,7 +16,8 @@ class AdvertisementController (private val connection: DatabaseConnection) {
 
         val passwordHash = advertisement.password!!.md5()
         connection.execute(
-            "INSERT INTO advertisements (id, description, password) VALUES ('${advertisement.id}', '${advertisement.description}', '$passwordHash')"
+            "INSERT INTO advertisements (id, description, password) VALUES ('" +
+                    "${advertisement.id}', '${advertisement.description}', '$passwordHash')"
         )
 
         return FrameworkResponse(

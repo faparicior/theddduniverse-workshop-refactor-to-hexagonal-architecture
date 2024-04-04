@@ -6,8 +6,19 @@ import java.sql.*
 
 class SqliteConnection: DatabaseConnection {
     private lateinit var conn: Connection
+    init {
+        this.connect()
+    }
 
-    override fun connect(): SqliteConnection {
+    override fun execute(sql: String) {
+        this.conn.createStatement().executeUpdate(sql)
+    }
+
+    override fun query(sql: String): ResultSet {
+        return this.conn.createStatement().executeQuery(sql)
+    }
+
+    private fun connect(): SqliteConnection {
         val database = File("src/main/resources/db/advertisements.sqlite")
         val createDatabaseFile = File("src/main/resources/db/migrations/migration.sql")
 
@@ -28,13 +39,5 @@ class SqliteConnection: DatabaseConnection {
         }
 
         return this
-    }
-
-    override fun execute(sql: String) {
-        this.conn.createStatement().executeUpdate(sql)
-    }
-
-    override fun query(sql: String): ResultSet {
-        return this.conn.createStatement().executeQuery(sql)
     }
 }

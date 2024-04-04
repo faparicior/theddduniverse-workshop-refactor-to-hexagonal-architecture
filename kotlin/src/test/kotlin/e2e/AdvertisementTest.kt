@@ -3,6 +3,7 @@ package e2e
 import framework.DependencyInjectionResolver
 import framework.FrameworkRequest
 import framework.Server
+import framework.database.DatabaseConnection
 import framework.database.SqliteConnection
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.BeforeEach
@@ -15,11 +16,11 @@ class AdvertisementTest {
         private const val PASSWORD = "myPassword"
     }
 
-    private lateinit var connection: SqliteConnection
+    private lateinit var connection: DatabaseConnection
 
     @BeforeEach
     fun init() {
-        this.connection = SqliteConnection().connect()
+        this.connection = DependencyInjectionResolver().connection()
         this.connection.execute("DELETE FROM advertisements")
     }
 
