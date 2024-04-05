@@ -16,13 +16,13 @@ class Server(private val resolver: DependencyInjectionResolver){
     }
 
     private fun get(): FrameworkResponse {
-        return FrameworkResponse(FrameworkResponse::STATUS_NOT_FOUND, mapOf())
+        return FrameworkResponse(FrameworkResponse.STATUS_NOT_FOUND, mapOf())
     }
 
     private fun post(request: FrameworkRequest): FrameworkResponse {
         return when (request.path) {
             "advertisement" -> {
-                resolver.advertisementController().addAdvertisement(request)
+                resolver.publishAdvertisementController().execute(request)
             }
             else -> {
                 this.notFound()
@@ -31,6 +31,6 @@ class Server(private val resolver: DependencyInjectionResolver){
     }
 
     private fun notFound(): FrameworkResponse {
-        return FrameworkResponse(FrameworkResponse::STATUS_NOT_FOUND, mapOf())
+        return FrameworkResponse(FrameworkResponse.STATUS_NOT_FOUND, mapOf())
     }
 }

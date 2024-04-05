@@ -2,7 +2,7 @@ package framework
 
 import kotlin.reflect.KProperty0
 
-data class FrameworkResponse(val statusCode: KProperty0<Int>, val content: Map<String, String>)
+data class FrameworkResponse(val statusCode: Int, val content: Map<String, String>)
 {
     companion object {
         const val STATUS_OK = 200

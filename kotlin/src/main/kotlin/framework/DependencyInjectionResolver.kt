@@ -1,12 +1,25 @@
 package framework
 
-import controllers.AdvertisementController
+import advertisement.application.addAdvertisement.PublishAdvertisementUseCase
+import advertisement.domain.AdvertisementRepository
+import advertisement.infrastructure.persisence.SqLiteAdvertisementRepository
+import advertisement.ui.http.PublishAdvertisementController
 import framework.database.DatabaseConnection
 import framework.database.SqliteConnection
 
 class DependencyInjectionResolver {
-    fun advertisementController(): AdvertisementController {
-        return AdvertisementController(this.connection())
+    fun publishAdvertisementController(): PublishAdvertisementController {
+        return PublishAdvertisementController(
+            PublishAdvertisementUseCase(
+                this.advertisementRepository()
+            )
+        )
+    }
+
+    fun advertisementRepository(): AdvertisementRepository {
+        return SqLiteAdvertisementRepository(
+            this.connection()
+        )
     }
 
     fun connection(): DatabaseConnection {

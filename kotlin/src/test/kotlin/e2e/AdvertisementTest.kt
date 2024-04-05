@@ -24,11 +24,11 @@ class AdvertisementTest {
     }
 
     @Test
-    fun `add advertisement`() {
+    fun `publish advertisement`() {
 
         val server = Server(DependencyInjectionResolver())
 
-        server.route(FrameworkRequest(
+        val result = server.route(FrameworkRequest(
                 FrameworkRequest.METHOD_POST,
                 "advertisement",
                 mapOf(
@@ -39,6 +39,8 @@ class AdvertisementTest {
             )
         )
 
+        Assertions.assertEquals(201, result.statusCode)
+
         val resultSet = this.connection.query("SELECT * from advertisements;")
         var description = ""
 
@@ -46,7 +48,6 @@ class AdvertisementTest {
             description = resultSet.getString(2)
         }
 
-        //Assertions.assertEquals(FLAT_DESCRIPTION, response.data["description"])
         Assertions.assertEquals(DESCRIPTION, description)
     }
 }
