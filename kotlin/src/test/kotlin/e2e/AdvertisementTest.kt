@@ -2,6 +2,7 @@ package e2e
 
 import framework.DependencyInjectionResolver
 import framework.FrameworkRequest
+import framework.FrameworkResponse
 import framework.Server
 import framework.database.DatabaseConnection
 import org.junit.jupiter.api.Assertions
@@ -28,7 +29,7 @@ class AdvertisementTest {
 
         val server = Server(DependencyInjectionResolver())
 
-        server.route(FrameworkRequest(
+        val result = server.route(FrameworkRequest(
                 FrameworkRequest.METHOD_POST,
                 "advertisement",
                 mapOf(
@@ -39,6 +40,7 @@ class AdvertisementTest {
             )
         )
 
+        Assertions.assertEquals(FrameworkResponse.STATUS_CREATED, result.statusCode)
         val resultSet = this.connection.query("SELECT * from advertisements;")
         var description = ""
 
@@ -46,7 +48,6 @@ class AdvertisementTest {
             description = resultSet.getString(2)
         }
 
-        //Assertions.assertEquals(FLAT_DESCRIPTION, response.data["description"])
         Assertions.assertEquals(DESCRIPTION, description)
     }
 }

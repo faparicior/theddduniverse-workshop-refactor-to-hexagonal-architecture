@@ -16,7 +16,7 @@ class Server(private val resolver: DependencyInjectionResolver){
     }
 
     private fun get(): FrameworkResponse {
-        return FrameworkResponse(FrameworkResponse::STATUS_NOT_FOUND, mapOf())
+        return FrameworkResponse(FrameworkResponse.STATUS_NOT_FOUND, mapOf())
     }
 
     private fun post(request: FrameworkRequest): FrameworkResponse {
@@ -31,6 +31,6 @@ class Server(private val resolver: DependencyInjectionResolver){
     }
 
     private fun notFound(): FrameworkResponse {
-        return FrameworkResponse(FrameworkResponse::STATUS_NOT_FOUND, mapOf())
+        return FrameworkResponse(FrameworkResponse.STATUS_NOT_FOUND, mapOf())
     }
 }

@@ -21,7 +21,7 @@ class AdvertisementController (private val connection: DatabaseConnection) {
         )
 
         return FrameworkResponse(
-            FrameworkResponse::STATUS_CREATED,
+            FrameworkResponse.STATUS_CREATED,
             mapOf(),
         )
     }
