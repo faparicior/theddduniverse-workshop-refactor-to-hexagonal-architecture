@@ -1,7 +1,5 @@
 package framework
 
-import kotlin.reflect.KProperty0
-
 data class FrameworkResponse(val statusCode: Int, val content: Map<String, String>)
 {
     companion object {
