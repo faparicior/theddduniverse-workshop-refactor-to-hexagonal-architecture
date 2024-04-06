@@ -4,13 +4,11 @@
 
 ## Refactor to "Hexagonal Architecture"
 
-#### [Workshop presentation slides](https://docs.google.com/presentation/d/17RkrZKJLPwlBhgMuD4ze4J0B2rVFChJ4Po-1e-lSJBU/edit?usp=sharing)
-
-As we argue in [our presentation about the code to refactor](../../README.md), our goal is to adapt the existing code to make it more flexible to changes.
+As we argue in [our presentation](../../README.md), our goal is to adapt the existing code to make it more flexible to changes.
 
 The first thing we need to do is prepare the ground for DDD to thrive. To do this, it is necessary to refactor our code to place all the pieces where they are expected in a Hexagonal Architecture.
 
-As a guide, we will use the cards from ["The DDD universe"](https://www.theddduniverse.com/). We will reveal cards, read their descriptions, and move code to its expected place. We will encounter several possible options.
+As a guide, we will use the cards from "The DDD Universe." We will reveal cards, read their descriptions, and move code to its expected place. We will encounter several possible options.
 
 - Move classes to a structure specific to Hexagonal Architecture
 - Create new classes to accommodate code portions.
@@ -55,10 +53,21 @@ Next, we will give them access to the repository and explain the key points.
 <details>
   <summary><b>Click to expand</b></summary>
 
-### Dynamics
-
-- Open debate about the importance of ensuring that a command does not return information.
-- Refactor code to meet expectations
-
 ![refactor-to-hexagonal-architecture-final](../es/refactor-a-arquitectura-hexagonal-3.webp)
+</details>
+
+## Activity: Tarjetas de responsabilidades
+
+<details>
+  <summary><b>Click to expand</b></summary>
+
+![refactor-to-hexagonal-architecture-responsibility-cards](../es/refactor-a-arquitectura-hexagonal-4.webp)
+</details>
+
+## Final solution: Tarjetas de responsabilidades
+
+<details>
+  <summary><b>Click to expand</b></summary>
+
+![refactor-to-hexagonal-architecture-final-responsibility-cards](../es/refactor-a-arquitectura-hexagonal-5.webp)
 </details>
