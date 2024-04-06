@@ -66,10 +66,21 @@ TODO: Link al código y rama.
 <details>
   <summary><b>Click para expandir</b></summary>
 
-### Dinámica
-
-- Abrimos debate sobre la importancia de hacer que un command no devuelva información.
-- Refactorizamos código para cumplir expectativas
-
 ![refactor-a-arquitectura-hexagonal-final](refactor-a-arquitectura-hexagonal-3.webp)
+</details>
+
+## Actividad: Tarjetas de responsabilidades
+
+<details>
+  <summary><b>Click para expandir</b></summary>
+
+![refactor-a-arquitectura-hexagonal-tarjetas-de-responsabilidades](refactor-a-arquitectura-hexagonal-4.webp)
+</details>
+
+## Solución final: Tarjetas de responsabilidades
+
+<details>
+  <summary><b>Click para expandir</b></summary>
+
+![refactor-a-arquitectura-hexagonal-final-con-tarjetas-de-responsabilidades](refactor-a-arquitectura-hexagonal-5.webp)
 </details>
