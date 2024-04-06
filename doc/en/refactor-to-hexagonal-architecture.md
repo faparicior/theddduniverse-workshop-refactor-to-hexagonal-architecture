@@ -53,10 +53,21 @@ Next, we will give them access to the repository and explain the key points.
 <details>
   <summary><b>Click to expand</b></summary>
 
-### Dynamics
-
-- Open debate about the importance of ensuring that a command does not return information.
-- Refactor code to meet expectations
-
 ![refactor-to-hexagonal-architecture-final](../es/refactor-a-arquitectura-hexagonal-3.webp)
+</details>
+
+## Activity: Tarjetas de responsabilidades
+
+<details>
+  <summary><b>Click to expand</b></summary>
+
+![refactor-to-hexagonal-architecture-responsibility-cards](../es/refactor-a-arquitectura-hexagonal-4.webp)
+</details>
+
+## Final solution: Tarjetas de responsabilidades
+
+<details>
+  <summary><b>Click to expand</b></summary>
+
+![refactor-to-hexagonal-architecture-final-responsibility-cards](../es/refactor-a-arquitectura-hexagonal-5.webp)
 </details>
