@@ -4,16 +4,19 @@ import { PublishAdvertisementUseCase } from "../advertisement/aplication/publish
 import { SqliteAdvertisementRepository } from "../advertisement/infraestructure/SqliteAdvertisementRepository";
 import { FrameworkRequest } from "./FrameworkRequest";
 import { FrameworkResponse } from "./FrameworkResponse";
+import { DatabaseConnection } from "./database/DatabaseConnection";
+import SqliteConnection from "./database/SqliteConnection";
+import { SqliteConnectionFactory } from "./database/SqliteConnectionFactory";
 
 export class FrameworkServer {
 
-  private connection: Database;
+  private connection: DatabaseConnection;
   private advertisementRepository: SqliteAdvertisementRepository;
   private publishAdvertisementUseCase: PublishAdvertisementUseCase;
   private publishAdvertisementController: PublishAdvertisementController;
 
-  constructor(connection: Database) {
-    this.connection = connection
+  constructor(connection: DatabaseConnection) {
+    this.connection = connection;
     this.advertisementRepository = new SqliteAdvertisementRepository(this.connection);
     this.publishAdvertisementUseCase = new PublishAdvertisementUseCase(this.advertisementRepository);
     this.publishAdvertisementController = new PublishAdvertisementController(this.publishAdvertisementUseCase)
