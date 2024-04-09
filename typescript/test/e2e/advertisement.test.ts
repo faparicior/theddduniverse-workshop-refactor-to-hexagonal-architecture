@@ -2,16 +2,19 @@ import { v4 as uuid } from "uuid"
 import { FrameworkRequest, Method } from "../../src/framework/FrameworkRequest";
 import SqliteConnection from "../../src/framework/database/SqliteConnection";
 import { FrameworkServer } from "../../src/framework/FrameworkServer";
+import { SqliteConnectionFactory } from "../../src/framework/database/SqliteConnectionFactory";
+import { DatabaseConnection } from "../../src/framework/database/DatabaseConnection";
 
 let server: FrameworkServer
+let connection: DatabaseConnection;
 describe("Advertisement", () => {
 
 
     beforeAll(async () => {
         server = new FrameworkServer();
-        const connection = await new SqliteConnection().connect();
-        await connection.run('delete from advertisements;')
-        connection.close();
+        await server.start();
+        connection = await SqliteConnectionFactory.createClient();
+        await connection.execute('delete from advertisements;', []);
     })
     it("Should create a advertisement", async () => {
 
@@ -21,9 +24,7 @@ describe("Advertisement", () => {
 
         const actual = await server.route(request)
 
-        const connection = await new SqliteConnection().connect();
-
-        const dbData = await connection.all("SELECT * FROM advertisements")
+        const dbData = await connection.query("SELECT * FROM advertisements")
 
         expect(actual.statusCode).toBe(201);
 

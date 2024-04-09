@@ -8,6 +8,10 @@ export class FrameworkServer {
 
   constructor() { }
 
+  async start(): Promise<void> {
+
+  }
+
   async route(request: FrameworkRequest): Promise<FrameworkResponse> {
 
     const route = `${request.method}:${request.path}`

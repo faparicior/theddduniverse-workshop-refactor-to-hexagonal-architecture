@@ -1,31 +1,25 @@
-import sqlite3 from 'sqlite3'
-import { open, Database } from 'sqlite'
-import * as fs from "fs";
-import {DatabaseConnection} from "./DatabaseConnection";
 
-export default class SqliteConnection implements DatabaseConnection{
-    path_to_sqlite_file = 'src/db/advertisements.sqlite'
-    path_to_sqlite_migration = 'src/db/migrations/migration.sql'
+import { Database } from 'sqlite'
 
-    async connect(): Promise<Database> {
-        let createDatabase = false
+import { DatabaseConnection } from './DatabaseConnection';
 
-        if (!fs.existsSync(this.path_to_sqlite_file)) {
-            createDatabase = true
-        }
+export default class SqliteConnection implements DatabaseConnection {
 
-        const db = await open({
-            filename: this.path_to_sqlite_file,
-            driver: sqlite3.Database
-        })
+    private connection: Database
 
-        if (createDatabase) this.createDatabase(db)
-
-        return db
+    constructor(connection: Database) {
+        this.connection = connection
     }
 
-    private createDatabase(db: Database): void {
-        console.log('Migrating database')
-        db.exec(fs.readFileSync(this.path_to_sqlite_migration).toString());
+    async execute(sql: string, data: unknown[]): Promise<void> {
+        try {
+            await this.connection.run(sql, data);
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+    async query(sql: string): Promise<unknown[]> {
+        return await this.connection.all(sql);
     }
 }
