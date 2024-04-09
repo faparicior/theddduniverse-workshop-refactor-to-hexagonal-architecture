@@ -6,10 +6,10 @@ export class FrameworkServer {
 
   private advertisementController = new AdvertisementController()
 
-  constructor() { }
+  private constructor() { }
 
-  async start(): Promise<void> {
-
+  static async start(): Promise<FrameworkServer> {
+    return Promise.resolve(new FrameworkServer())
   }
 
   async route(request: FrameworkRequest): Promise<FrameworkResponse> {

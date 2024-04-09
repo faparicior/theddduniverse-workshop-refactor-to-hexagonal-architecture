@@ -18,15 +18,15 @@ export default class AdvertisementController {
 
 		const connection = await SqliteConnectionFactory.createClient();
 
-		const { id, description, password } = req.body;
-
-		// const result = await connection.run('INSERT INTO advertisements (id, description, password) VALUES (?, ?, ?)',
-		// 	id, description, createHash('md5').update(password).digest('hex'));
-
+		const advertisement = {
+			id: req.body.id,
+			description: req.body.description,
+			password: req.body.password
+		};
 
 		await connection.execute(
 			'INSERT INTO advertisements (id, description, password) VALUES (?, ?, ?)',
-			[id, description, createHash('md5').update(password).digest('hex')]);
+			[advertisement.id, advertisement.description, createHash('md5').update(advertisement.password).digest('hex')]);
 
 		return new FrameworkResponse(201)
 
