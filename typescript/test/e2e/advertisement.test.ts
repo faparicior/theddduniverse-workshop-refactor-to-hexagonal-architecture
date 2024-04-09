@@ -11,7 +11,7 @@ describe("Advertisement", () => {
 
     beforeAll(async () => {
         connection = await SqliteConnectionFactory.createClient();
-        server = new FrameworkServer(connection);
+        server = await FrameworkServer.start();
 
         await connection.execute('delete from advertisements;', [])
     })

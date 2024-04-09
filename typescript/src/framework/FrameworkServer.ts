@@ -1,25 +1,27 @@
 import { Database } from "sqlite";
 import { PublishAdvertisementController } from "../advertisement/UI/Http/PublishAdvertisementController";
-import { PublishAdvertisementUseCase } from "../advertisement/aplication/publish-advertisement/PublishAdvertisementUseCase";
-import { SqliteAdvertisementRepository } from "../advertisement/infraestructure/SqliteAdvertisementRepository";
+import { PublishAdvertisementUseCase } from "../advertisement/application/publish-advertisement/PublishAdvertisementUseCase";
+import { SqliteAdvertisementRepository } from "../advertisement/infrastructure/SqliteAdvertisementRepository";
 import { FrameworkRequest } from "./FrameworkRequest";
 import { FrameworkResponse } from "./FrameworkResponse";
 import { DatabaseConnection } from "./database/DatabaseConnection";
-import SqliteConnection from "./database/SqliteConnection";
 import { SqliteConnectionFactory } from "./database/SqliteConnectionFactory";
 
 export class FrameworkServer {
 
-  private connection: DatabaseConnection;
-  private advertisementRepository: SqliteAdvertisementRepository;
-  private publishAdvertisementUseCase: PublishAdvertisementUseCase;
-  private publishAdvertisementController: PublishAdvertisementController;
+  private constructor(
+    private publishAdvertisementController: PublishAdvertisementController) {
 
-  constructor(connection: DatabaseConnection) {
-    this.connection = connection;
-    this.advertisementRepository = new SqliteAdvertisementRepository(this.connection);
-    this.publishAdvertisementUseCase = new PublishAdvertisementUseCase(this.advertisementRepository);
-    this.publishAdvertisementController = new PublishAdvertisementController(this.publishAdvertisementUseCase)
+  };
+
+  static async start(): Promise<FrameworkServer> {
+    const connection = await SqliteConnectionFactory.createClient();
+    const advertisementRepository = new SqliteAdvertisementRepository(connection);
+    const publishAdvertisementUseCase = new PublishAdvertisementUseCase(advertisementRepository);
+    const publishAdvertisementController = new PublishAdvertisementController(publishAdvertisementUseCase)
+
+    return new FrameworkServer(publishAdvertisementController);
+
   }
 
   async route(request: FrameworkRequest): Promise<FrameworkResponse> {
