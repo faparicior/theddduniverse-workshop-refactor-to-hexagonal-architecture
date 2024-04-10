@@ -1,7 +1,7 @@
 import { FrameworkRequest } from '../../../framework/FrameworkRequest';
 import { FrameworkResponse } from '../../../framework/FrameworkResponse';
-import { PublishAdvertisementCommand } from '../../aplication/publish-advertisement/PublishAdvertisementCommand';
-import { PublishAdvertisementUseCase } from '../../aplication/publish-advertisement/PublishAdvertisementUseCase';
+import { PublishAdvertisementCommand } from '../../application/publish-advertisement/PublishAdvertisementCommand';
+import { PublishAdvertisementUseCase } from '../../application/publish-advertisement/PublishAdvertisementUseCase';
 
 type AddAdvertisementRequest = FrameworkRequest & {
   body: {
