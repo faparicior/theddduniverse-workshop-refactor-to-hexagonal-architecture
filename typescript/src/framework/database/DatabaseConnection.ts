@@ -1,7 +1,4 @@
-import {Database} from "sqlite";
-
 export interface DatabaseConnection {
-
-    connect(): Promise<Database>;
-
+    execute(sql: string, data: unknown[]): Promise<void>
+    query(sql: string): Promise<unknown[]>
 }
