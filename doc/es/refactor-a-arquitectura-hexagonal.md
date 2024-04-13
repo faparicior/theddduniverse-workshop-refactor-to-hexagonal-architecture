@@ -27,13 +27,9 @@ Acto seguido, les daremos acceso al repositorio y les explicamos los puntos clav
 - Simula un framework
 - Hay tests a nivel de controlador para asegurar que no rompemos nada
 
-```
-TODO: Link a presentación.
-TODO: Repositorio con todos los lenguajes soportados
- - PHP
- - Kotlin
- - Typescript
-```
+### Presentación
+
+[Aquí](https://docs.google.com/presentation/d/1QKRKChP3ZOsQDsZWeMtUj_8P6ts6o9aRaBmFAhCY3tM/edit?usp=sharing) puedes acceder a la presentación.
 
 ### [Actividad en Canva](https://www.canva.com/design/DAF6VDIfdkE/jBve6kYf6zX9ly9tyEToNA/edit?utm_content=DAF6VDIfdkE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
