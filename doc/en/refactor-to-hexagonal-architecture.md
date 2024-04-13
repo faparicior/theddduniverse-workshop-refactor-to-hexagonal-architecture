@@ -26,6 +26,9 @@ Next, we will give them access to the repository and explain the key points.
 - Simulates a framework
 - There are controller-level tests to ensure that nothing breaks
 
+### Slides
+
+[Here](https://docs.google.com/presentation/d/1QKRKChP3ZOsQDsZWeMtUj_8P6ts6o9aRaBmFAhCY3tM/edit?usp=sharing) you can access the slides content.
 
 ### [Canva Activity](https://www.canva.com/design/DAF6VDIfdkE/jBve6kYf6zX9ly9tyEToNA/edit?utm_content=DAF6VDIfdkE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
