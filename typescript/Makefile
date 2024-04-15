@@ -5,19 +5,19 @@ current_dir = $(shell pwd)
 
 install:
 	docker compose run --rm --interactive --tty --user $(user)\
-	  node npm install
+	  node-ddduniverse npm install
 .PHONY: install
 
-test:
+tests:
 	docker compose run --rm --interactive --tty --user $(user)\
-	  node npm run test
+	  node-ddduniverse npm run test
 .PHONY: test
 
 console:
 	docker compose run --rm --interactive --tty --user $(user)\
-	  node /bin/bash
+	  node-ddduniverse /bin/bash
 .PHONY: console
 
 build-image:
-	docker compose -f docker-compose.yml build node
+	docker compose -f docker-compose.yml build node-ddduniverse
 .PHONY: build-image
