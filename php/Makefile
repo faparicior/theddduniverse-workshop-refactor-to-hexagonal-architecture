@@ -25,14 +25,14 @@ composer-autoload:
 .PHONY: composer-autoload
 
 tests:
-	docker run -u $(user):$(group) -it --rm --name demo-app -v $(current_dir)/:/usr/src/app -w /usr/src/app php:8.3.2-cli-bullseye php /usr/src/app/vendor/phpunit/phpunit/phpunit  /usr/src/app/tests/E2e
+	docker compose run --rm --interactive --tty --user $(user) -v $(current_dir)/:/usr/src/app -w /usr/src/app \
+	  php-ddduniverse php /usr/src/app/vendor/phpunit/phpunit/phpunit /usr/src/app/tests/E2e
 .PHONY: tests
 
 console:
-	docker compose run --rm php /bin/bash
+	docker compose run --rm php-ddduniverse /bin/bash
 .PHONY: console
 
-
 build-image:
-	docker compose -f docker-compose.yml build php
+	docker compose -f docker-compose.yml build php-ddduniverse
 .PHONY: build-image

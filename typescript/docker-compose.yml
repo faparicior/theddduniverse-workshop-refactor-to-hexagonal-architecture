@@ -1,5 +1,5 @@
 services:
-  node:
+  node-ddduniverse:
     build:
       context: ./docker/node
       dockerfile: Dockerfile
