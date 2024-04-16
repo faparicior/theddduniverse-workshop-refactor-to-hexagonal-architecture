@@ -3,9 +3,6 @@ services:
     build:
       context: ./docker/php
       dockerfile: Dockerfile
-      args:
-        - UID=1000
-        - GID=1000
     image: app_php
     container_name: app_php
     sysctls:
