@@ -1,11 +1,9 @@
+
 services:
   node-ddduniverse:
     build:
       context: ./docker/node
       dockerfile: Dockerfile
-      args:
-        - UID=1000
-        - GID=1000
     image: app_node
     container_name: app_node
     user: "node"
