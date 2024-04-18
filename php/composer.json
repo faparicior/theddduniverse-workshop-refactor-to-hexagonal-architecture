@@ -1,5 +1,7 @@
 {
     "name": "demo/app",
+    "description": "Refactoring to Hexagonal Architecture workshop.",
+    "keywords": ["ddd", "workshop", "hexagonal architecture"],
     "autoload": {
         "psr-4": {
             "Demo\\App\\": "src/"
