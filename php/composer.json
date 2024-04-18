@@ -2,6 +2,12 @@
     "name": "demo/app",
     "description": "Refactoring to Hexagonal Architecture workshop.",
     "keywords": ["ddd", "workshop", "hexagonal architecture"],
+    "require": {
+        "php": "^8.3",
+        "ext-pdo": "*",
+        "ramsey/uuid": "^4.7",
+        "phpunit/phpunit": "^10.0"
+    },
     "autoload": {
         "psr-4": {
             "Demo\\App\\": "src/"
