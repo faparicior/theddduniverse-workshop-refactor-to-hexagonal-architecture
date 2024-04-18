@@ -2,3 +2,4 @@ vendor
 *.sqlite
 /.phpunit.result.cache
 /.phpunit.cache
+/composer.lock
