@@ -19,10 +19,8 @@
             "Tests\\Demo\\App\\": "tests/"
         }
     },
-    "require": {
-        "php": "^8.3",
-        "ext-pdo": "*",
-        "ramsey/uuid": "^4.7",
-        "phpunit/phpunit": "^10.0"
+    "scripts": {
+        "test": "vendor/bin/phpunit --no-coverage",
+        "test-coverage": "vendor/bin/phpunit --coverage-html build/coverage"
     }
 }
