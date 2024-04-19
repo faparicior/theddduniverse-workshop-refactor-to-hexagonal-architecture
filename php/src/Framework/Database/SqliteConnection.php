@@ -7,8 +7,8 @@ use PDO;
 
 final class SqliteConnection implements DatabaseConnection
 {
-    private const string PATH_TO_SQLITE_FILE = 'src/db/advertisements.sqlite';
-    private const string PATH_TO_SQLITE_MIGRATION = 'src/db/migrations/migration.sql';
+    private const string PATH_TO_SQLITE_FILE = __DIR__ . '/../../db/advertisements.sqlite';
+    private const string PATH_TO_SQLITE_MIGRATION = __DIR__ . '/../../db/migrations/migration.sql';
 
     private ?PDO $dbConnection = null;
 
