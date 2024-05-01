@@ -1,6 +1,6 @@
 package framework
 
-import advertisement.application.addAdvertisement.PublishAdvertisementUseCase
+import advertisement.application.publishAdvertisement.PublishAdvertisementUseCase
 import advertisement.domain.AdvertisementRepository
 import advertisement.infrastructure.persisence.SqLiteAdvertisementRepository
 import advertisement.ui.http.PublishAdvertisementController

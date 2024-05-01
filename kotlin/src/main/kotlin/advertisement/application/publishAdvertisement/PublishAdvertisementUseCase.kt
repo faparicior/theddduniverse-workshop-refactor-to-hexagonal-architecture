@@ -1,4 +1,4 @@
-package advertisement.application.addAdvertisement
+package advertisement.application.publishAdvertisement
 
 import advertisement.domain.AdvertisementRepository
 import advertisement.domain.model.Advertisement
