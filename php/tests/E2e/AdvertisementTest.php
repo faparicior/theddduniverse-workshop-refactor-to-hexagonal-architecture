@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase;
 
 final class AdvertisementTest extends TestCase
 {
-    private const string FLAT_ID = '6fa00b21-2930-483e-b610-d6b0e5b19b29';
+    private const string ADVERTISEMENT_ID = '6fa00b21-2930-483e-b610-d6b0e5b19b29';
     private DependencyInjectionResolver $resolver;
     private Server $server;
     private DatabaseConnection $connection;
@@ -33,7 +33,7 @@ final class AdvertisementTest extends TestCase
             FrameworkRequest::METHOD_POST,
             'advertisement',
             [
-                'id' => self::FLAT_ID,
+                'id' => self::ADVERTISEMENT_ID,
                 'description' => 'Dream advertisement ',
                 'password' => 'myPassword',
             ]
