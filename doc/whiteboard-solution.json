@@ -1,0 +1,496 @@
+{
+  "version": "2",
+  "exportDate": "2025-07-09T18:25:45.761Z",
+  "cardCount": 47,
+  "metadata": {
+    "regularCards": 15,
+    "responsibilityCards": 31,
+    "customCards": 0,
+    "boardTableCards": 1
+  },
+  "cards": [
+    {
+      "id": "mcw6x4qxphtlzznb5tn",
+      "sourceId": null,
+      "position": {
+        "x": 306.82532534073755,
+        "y": 378.6202429111678
+      },
+      "isFlipped": false,
+      "cardType": "board-table",
+      "color": "yellow",
+      "imageUrl": "/board-table.png",
+      "imageMetadata": {
+        "naturalWidth": 2500,
+        "naturalHeight": 2113,
+        "aspectRatio": 1.183151916706105,
+        "scaleFactor": 1
+      }
+    },
+    {
+      "id": "mcwaar08zekiw1q7qhf",
+      "sourceId": "03",
+      "position": {
+        "x": 490.0245857968779,
+        "y": 454.68536251480873
+      },
+      "isFlipped": false,
+      "cardType": "regular"
+    },
+    {
+      "id": "mcw6xfv1ickjoav7p0j",
+      "sourceId": "04",
+      "position": {
+        "x": 868.5696326109705,
+        "y": 455.5354692486165
+      },
+      "isFlipped": false,
+      "cardType": "regular"
+    },
+    {
+      "id": "mcwaaw051apbqpi28bb",
+      "sourceId": "05",
+      "position": {
+        "x": 1236.7022264004443,
+        "y": 457.4288467397745
+      },
+      "isFlipped": false,
+      "cardType": "regular"
+    },
+    {
+      "id": "mcwabcxas8fi0xl3gmr",
+      "sourceId": "09",
+      "position": {
+        "x": 485.9093594594293,
+        "y": 1818.6469537356593
+      },
+      "isFlipped": false,
+      "cardType": "regular"
+    },
+    {
+      "id": "mcwab8k503vkevn4n16h",
+      "sourceId": "08",
+      "position": {
+        "x": 482.22211666107535,
+        "y": 1361.4068988659747
+      },
+      "isFlipped": false,
+      "cardType": "regular"
+    },
+    {
+      "id": "mcwabjxhumkcnxrhtgl",
+      "sourceId": "10",
+      "position": {
+        "x": 486.35929087232375,
+        "y": 913.2971594969762
+      },
+      "isFlipped": false,
+      "cardType": "regular"
+    },
+    {
+      "id": "mcwabpyrdn1aum938x6",
+      "sourceId": "12",
+      "position": {
+        "x": 866.7817874429685,
+        "y": 914.668901609459
+      },
+      "isFlipped": false,
+      "cardType": "regular"
+    },
+    {
+      "id": "mcwac8z2zng63vmwzsd",
+      "sourceId": "13",
+      "position": {
+        "x": 1238.9957792125158,
+        "y": 921.0776807589789
+      },
+      "isFlipped": false,
+      "cardType": "regular"
+    },
+    {
+      "id": "mcwacbcbm1fidqs3nh",
+      "sourceId": "14",
+      "position": {
+        "x": 1610.737891695369,
+        "y": 922.4494228714616
+      },
+      "isFlipped": false,
+      "cardType": "regular"
+    },
+    {
+      "id": "mcwaayrsom2ej0y5rhs",
+      "sourceId": "07",
+      "position": {
+        "x": 2351.45668456231,
+        "y": 469.77452575212016
+      },
+      "isFlipped": false,
+      "cardType": "regular"
+    },
+    {
+      "id": "mcwaaxgq2wd9xso6x8a",
+      "sourceId": "06",
+      "position": {
+        "x": 1980.6363827790449,
+        "y": 476.63323631453443
+      },
+      "isFlipped": false,
+      "cardType": "regular"
+    },
+    {
+      "id": "mcwacuf4n7fzu8cbwcn",
+      "sourceId": "18",
+      "position": {
+        "x": 1981.1082620657392,
+        "y": 1351.8047040785946
+      },
+      "isFlipped": false,
+      "cardType": "regular"
+    },
+    {
+      "id": "mcwad8xcgd5jf82lqw",
+      "sourceId": "54",
+      "position": {
+        "x": 1985.2234884031877,
+        "y": 1767.4425641608993
+      },
+      "isFlipped": false,
+      "cardType": "regular"
+    },
+    {
+      "id": "mcwacgz70u81ggcf22sf",
+      "sourceId": "16",
+      "position": {
+        "x": 2356.965600886041,
+        "y": 929.3081334338758
+      },
+      "isFlipped": false,
+      "cardType": "regular"
+    },
+    {
+      "id": "mcwacymwvtj840u8cx",
+      "sourceId": "15",
+      "position": {
+        "x": 1987.9669726281536,
+        "y": 923.8211649839443
+      },
+      "isFlipped": false,
+      "cardType": "regular"
+    },
+    {
+      "id": "mcwaeaj112fowa1cca3",
+      "sourceId": "01",
+      "position": {
+        "x": 861.5854130072261,
+        "y": 1322.6266913154868
+      },
+      "isFlipped": false,
+      "cardType": "responsibility"
+    },
+    {
+      "id": "mcwaeaj1kd1wetn4k",
+      "sourceId": "04",
+      "position": {
+        "x": 864.7719667048588,
+        "y": 1463.5168883723713
+      },
+      "isFlipped": false,
+      "cardType": "responsibility"
+    },
+    {
+      "id": "mcwaeaj18u6xahvy9ko",
+      "sourceId": "03",
+      "position": {
+        "x": 866.2040209205946,
+        "y": 1599.650780795504
+      },
+      "isFlipped": false,
+      "cardType": "responsibility"
+    },
+    {
+      "id": "mcwaeaj170807e8rhwl",
+      "sourceId": "05",
+      "position": {
+        "x": 867.2858224144306,
+        "y": 1737.7576281812912
+      },
+      "isFlipped": false,
+      "cardType": "responsibility"
+    },
+    {
+      "id": "mcwaeaj1qov6cijq7y",
+      "sourceId": "06",
+      "position": {
+        "x": 861.9078582733865,
+        "y": 1877.837430529732
+      },
+      "isFlipped": false,
+      "cardType": "responsibility"
+    },
+    {
+      "id": "mcwaeaj1oe5dgvnsaa",
+      "sourceId": "08",
+      "position": {
+        "x": 859.0437498419143,
+        "y": 2017.9172328781729
+      },
+      "isFlipped": false,
+      "cardType": "responsibility"
+    },
+    {
+      "id": "mcwaeaj1bww93jrq6ia",
+      "sourceId": "07",
+      "position": {
+        "x": 858.5028490949965,
+        "y": 2157.9970352266137
+      },
+      "isFlipped": false,
+      "cardType": "responsibility"
+    },
+    {
+      "id": "mcwaeaj1v8qk73c0tis",
+      "sourceId": "02",
+      "position": {
+        "x": 855.7983453604061,
+        "y": 2300.0497925377085
+      },
+      "isFlipped": false,
+      "cardType": "responsibility"
+    },
+    {
+      "id": "mcwafdmi7wijaf8r0nd",
+      "sourceId": "12",
+      "position": {
+        "x": 1229.0364622444165,
+        "y": 1342.5517044884248
+      },
+      "isFlipped": false,
+      "cardType": "responsibility"
+    },
+    {
+      "id": "mcwafdmi9c5xbbfvst7",
+      "sourceId": "11",
+      "position": {
+        "x": 1230.378960781022,
+        "y": 1489.3175742933734
+      },
+      "isFlipped": false,
+      "cardType": "responsibility"
+    },
+    {
+      "id": "mcwafdmhhnqwcdp1dad",
+      "sourceId": "10",
+      "position": {
+        "x": 1235.8557091712878,
+        "y": 1636.0834440983222
+      },
+      "isFlipped": false,
+      "cardType": "responsibility"
+    },
+    {
+      "id": "mcwafdmhl21xr4ke4h9",
+      "sourceId": "09",
+      "position": {
+        "x": 1234.995218829693,
+        "y": 1776.6479391227804
+      },
+      "isFlipped": false,
+      "cardType": "responsibility"
+    },
+    {
+      "id": "mcwafuelr9xdl0wuv4m",
+      "sourceId": "30",
+      "position": {
+        "x": 1613.6284528786905,
+        "y": 1336.3503297079337
+      },
+      "isFlipped": false,
+      "cardType": "responsibility"
+    },
+    {
+      "id": "mcwafuelvxmtrgbz298",
+      "sourceId": "18",
+      "position": {
+        "x": 1619.1052012689563,
+        "y": 1485.183324439713
+      },
+      "isFlipped": false,
+      "cardType": "responsibility"
+    },
+    {
+      "id": "mcwafuelhvmz8fp3cad",
+      "sourceId": "17",
+      "position": {
+        "x": 1620.4476998055618,
+        "y": 1638.1505690251524
+      },
+      "isFlipped": false,
+      "cardType": "responsibility"
+    },
+    {
+      "id": "mcwafuel2c6rqbjtuep",
+      "sourceId": "16",
+      "position": {
+        "x": 1619.7230734153366,
+        "y": 1791.117813610592
+      },
+      "isFlipped": false,
+      "cardType": "responsibility"
+    },
+    {
+      "id": "mcwafueldydvm6rkxdg",
+      "sourceId": "15",
+      "position": {
+        "x": 1623.1326968787723,
+        "y": 1939.9508083423711
+      },
+      "isFlipped": false,
+      "cardType": "responsibility"
+    },
+    {
+      "id": "mcwafuel5tph54b51bx",
+      "sourceId": "14",
+      "position": {
+        "x": 1622.4080704885473,
+        "y": 2088.7838030741505
+      },
+      "isFlipped": false,
+      "cardType": "responsibility"
+    },
+    {
+      "id": "mcwafuel3jqke92gqsj",
+      "sourceId": "13",
+      "position": {
+        "x": 1624.8504493665432,
+        "y": 2241.7510476595903
+      },
+      "isFlipped": false,
+      "cardType": "responsibility"
+    },
+    {
+      "id": "mcwagcdn9552qppd6v7",
+      "sourceId": "41",
+      "position": {
+        "x": 2366.0619262449068,
+        "y": 1338.417454634764
+      },
+      "isFlipped": false,
+      "cardType": "responsibility"
+    },
+    {
+      "id": "mcwagcdn7csw28cp39d",
+      "sourceId": "24",
+      "position": {
+        "x": 2369.471549708342,
+        "y": 1485.183324439713
+      },
+      "isFlipped": false,
+      "cardType": "responsibility"
+    },
+    {
+      "id": "mcwagcdncc85huf4405",
+      "sourceId": "23",
+      "position": {
+        "x": 2374.948298098608,
+        "y": 1629.8820693178313
+      },
+      "isFlipped": false,
+      "cardType": "responsibility"
+    },
+    {
+      "id": "mcwagcdnl0arvq5pzjd",
+      "sourceId": "22",
+      "position": {
+        "x": 2370.089421854723,
+        "y": 1772.5136892691196
+      },
+      "isFlipped": false,
+      "cardType": "responsibility"
+    },
+    {
+      "id": "mcwagcdn1mk6vddlson",
+      "sourceId": "21",
+      "position": {
+        "x": 2373.4990453181586,
+        "y": 1919.2795590740684
+      },
+      "isFlipped": false,
+      "cardType": "responsibility"
+    },
+    {
+      "id": "mcwagcdnhh7xnv0f7ou",
+      "sourceId": "20",
+      "position": {
+        "x": 2374.8415438547636,
+        "y": 2068.1125538058477
+      },
+      "isFlipped": false,
+      "cardType": "responsibility"
+    },
+    {
+      "id": "mcwagcdn69cttk0in",
+      "sourceId": "19",
+      "position": {
+        "x": 2375.323552049774,
+        "y": 2214.8784236107967
+      },
+      "isFlipped": false,
+      "cardType": "responsibility"
+    },
+    {
+      "id": "mcwagvvrh1bl25ovsu9",
+      "sourceId": "29",
+      "position": {
+        "x": 1988.3959367813488,
+        "y": 1751.842440000817
+      },
+      "isFlipped": false,
+      "cardType": "responsibility"
+    },
+    {
+      "id": "mcwagvvr2r13wp5kkuf",
+      "sourceId": "28",
+      "position": {
+        "x": 1987.6713103911238,
+        "y": 1896.5411848789356
+      },
+      "isFlipped": false,
+      "cardType": "responsibility"
+    },
+    {
+      "id": "mcwagvvrnzwrdwhtwvh",
+      "sourceId": "27",
+      "position": {
+        "x": 1993.1480587813899,
+        "y": 2041.2399297570546
+      },
+      "isFlipped": false,
+      "cardType": "responsibility"
+    },
+    {
+      "id": "mcwagvvrhf56x4yukic",
+      "sourceId": "26",
+      "position": {
+        "x": 1994.490557317995,
+        "y": 2183.8715497083426
+      },
+      "isFlipped": false,
+      "cardType": "responsibility"
+    },
+    {
+      "id": "mcwagvvr8m894kv1oes",
+      "sourceId": "25",
+      "position": {
+        "x": 1999.1068153666656,
+        "y": 2328.5702945864614
+      },
+      "isFlipped": false,
+      "cardType": "responsibility"
+    }
+  ],
+  "viewport": {
+    "x": 442.17909450681407,
+    "y": 39.30914323692372,
+    "zoom": 0.5904900000000002
+  }
+}
